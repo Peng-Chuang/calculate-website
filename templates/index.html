@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>商品价格计算器</title>
+</head>
+<body>
+    <h1>商品价格计算器</h1>
+    <form method="post">
+        <label for="item">选择商品:</label>
+        <select name="item" id="item">
+            <option value="apple">苹果</option>
+            <option value="banana">香蕉</option>
+            <option value="orange">橙子</option>
+        </select><br><br>
+        <label for="quantity">数量:</label>
+        <input type="number" name="quantity" id="quantity" min="1" required><br><br>
+        <input type="submit" value="计算">
+    </form>
+
+    {% if price is not none %}
+    <h2>计算结果</h2>
+    <p>您选择的商品: {{ item }}</p>
+    <p>数量: {{ quantity }}</p>
+    <p>总价格: ${{ price }}</p>
+    {% endif %}
+</body>
+</html>
